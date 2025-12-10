@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async code practice</title>
+</head>
+<body style="background-color: #414141; display: flex; align-items: center; justify-content: center;">
+    <button id="start">
+        Start
+    </button>
+    <button id="stop">
+        Stop
+    </button>
+</body>
+<script>
+
+    const sayName = function(){
+        console.log("my name is Async and date today is " + Date.now().toString());
+    }
+
+    let stopInterval;
+    document.getElementById('start').addEventListener('click' , () => {
+        stopInterval = setInterval(sayName , 2000);
+    })
+
+    document.getElementById('stop').addEventListener('click' , () => {
+        clearInterval(stopInterval);
+    })
+
+</script>
+</html>
